@@ -4,6 +4,12 @@
 
 angular.module('myApp.controllers', [])
 .controller('hotelsController', ['$scope', function($scope) {
+	$scope.headerName = 'List of Hotels';
+
+	$scope.showHotelName = function(hotel)
+	{
+		alert(hotel.name);
+	}
 
 	$scope.hotels = [
 	{
@@ -22,7 +28,8 @@ angular.module('myApp.controllers', [])
 		name : 'West Inn',
 		rate : 25000,
 		location : 'Mindspace',
-		image: 'http://i.imgur.com/e6CnwW4.jpg'
+		image: 'http://i.imgur.com/e6CnwW4.jpg',
+		className: 'red'
 	},
 	{
 		name : 'Novotel',
