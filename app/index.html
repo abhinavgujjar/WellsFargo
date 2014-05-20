@@ -19,38 +19,48 @@
 </style>
 <body ng-controller="hotelsController">
 
- <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">BookMySuite</a>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li ><a href="#/hotels">Hotels</a></li>
-          <li ><a href="#/newHotel">New Hotel</a></li>
-          <li ><a href="#/foriegnhotels">Phoren</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-<div class="container" >
-	<div class="row well" ng-repeat="hotel in hotels">
-		<div class="col-md-3 col-sm-5"><img width="150px" ng-src="{{hotel.image}}"/></div>
-		<div class="col-md-3 col-sm-3" ng-bind="hotel.name"></div>
-		<div class="col-md-3 col-sm-3"ng-bind="hotel.location"></div>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">BookMySuite</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li ><a href="#/hotels">Hotels</a></li>
+					<li ><a href="#/newHotel">New Hotel</a></li>
+					<li ><a href="#/foriegnhotels">Phoren</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+
+	<div class="container" >
+		<div class="row">
+			<input type="text" ng-model="searchTerm" />
+		</div>
+
+		<br/>
+
+		<div class="row well" ng-repeat="hotel in hotels | filter: {name:searchTerm} | orderBy :'rating' ">
+			<div class="col-md-3 col-sm-5"><img width="150px" ng-src="{{hotel.image}}"/></div>
+			<div class="col-md-3 col-sm-3" >
+				<div ng-bind="hotel.name | uppercase" class="h2"></div>
+				<div ng-bind="hotel.location" class="h4"></div>
+			</div>
+			<div class="col-md-3">
+				<div class="h3" ng-bind="hotel.rating"></div>
+			</div>
+		</div>
 	</div>
-</div>
 
-		
-
-
-
-		<script src="bower_components/angular/angular.js"></script>
-		<script src="bower_components/angular-route/angular-route.js"></script>
-		<script src="js/app.js"></script>
-		<script src="js/services.js"></script>
-		<script src="js/controllers.js"></script>
-		<script src="js/filters.js"></script>
-		<script src="js/directives.js"></script>
-	</body>
-	</html>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/directives.js"></script>
+</body>
+</html>
