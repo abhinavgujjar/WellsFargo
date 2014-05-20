@@ -11,6 +11,14 @@ angular.module('myApp.controllers', [])
 		alert(hotel.name);
 	}
 
+	$scope.upVote = function(hotel){
+		hotel.rating++;
+	}
+
+	$scope.downVote= function(hotel){
+		hotel.rating--;
+	}
+
 	$scope.hotels = [
 	{
 		name : 'Taj Banjara',
@@ -42,7 +50,7 @@ angular.module('myApp.controllers', [])
 		rating: 7
 	},
 
-	]
+	];
 
 }])
 .controller('MyCtrl2', ['$scope', function($scope) {
