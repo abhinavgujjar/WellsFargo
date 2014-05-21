@@ -1,9 +1,7 @@
 {
-	"id": 1,
-	"name" : "Lalit Ashok",
-	"location" : "Delhi",
-	"rating": 5,
-	"image": "img/ashok.jpg",
-	"dailYrate": 500,
-	"amenities": ["Spa", "Gym", "WiFi"]
+	"name" : "Taj Banjara BLAH",
+	"rate" : 15000,
+	"location" : "Banjara Hills",
+	"image": "http://i.imgur.com/vmviDYS.jpg",
+	"rating": 10
 }
