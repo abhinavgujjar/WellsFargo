@@ -12,6 +12,5 @@ angular.module('myApp.filters', []).
   	return function(rupees){
 		return rupees / 60;
 	}
-  	
   })
   ;

@@ -1,0 +1,9 @@
+{
+	"id": 1,
+	"name" : "Lalit Ashok",
+	"location" : "Delhi",
+	"rating": 5,
+	"image": "img/ashok.jpg",
+	"dailYrate": 500,
+	"amenities": ["Spa", "Gym", "WiFi"]
+}

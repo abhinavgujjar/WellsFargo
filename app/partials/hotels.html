@@ -1,0 +1,27 @@
+<div class="row">
+	<input type="text" ng-model="searchTerm" />
+</div>
+
+<br/>
+
+<div class="row well" ng-repeat="hotel in hotels | filter: {name:searchTerm} | orderBy :'rating' ">
+	<div class="col-md-3 col-sm-5"><img width="150px" ng-src="{{hotel.image}}"/></div>
+	<div class="col-md-3 col-sm-3" >
+		<div ng-bind="hotel.name | uppercase" class="h2"></div>
+		<div ng-bind="hotel.location" class="h4"></div>
+		<div ng-bind="hotel.rate | toDollars | currency " class="h4"></div>
+	</div>
+	<div class="col-md-3">
+		<div>
+			<button type="button" ng-click="upVote(hotel)" class="btn btn-default btn-xs">
+				<span class="glyphicon glyphicon-chevron-up"></span>
+			</button>
+		</div>
+		<span class="h4"><div class="label label-info">{{hotel.rating}}</div></span>
+		<div>
+			<button type="button" ng-click="downVote(hotel)" class="btn btn-default btn-xs">
+				<span class="glyphicon glyphicon-chevron-down"></span>
+			</button>
+		</div>
+	</div>
+</div>
