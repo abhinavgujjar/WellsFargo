@@ -1,9 +1,7 @@
 <div class="row well" >
 	<div class="col-md-3 col-sm-5"><img width="150px" ng-src="{{hotel.image}}"/></div>
 	<div class="col-md-3 col-sm-3" >
-		<a ng-href="#/details/{{key}}" ><div ng-bind="hotel.name " class="h2"></div></a>
-		<div ng-bind="hotel.location" class="h4"></div>
-		<div ng-bind="hotel.rate | toDollars | currency " class="h4"></div>
+		<hotel-summary></hotel-summary>
 	</div>
 	<div class="col-md-3">
 		<div>
