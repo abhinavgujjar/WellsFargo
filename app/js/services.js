@@ -14,7 +14,7 @@ factory('hotelDataProvider', ['$http', '$q', function dataProvider($http, $q){
 
 			var deferred = $q.defer();
 
-			$http({method: 'GET', url:'data/hotels.json'}).
+			$http({method: 'GET', url:'https://blazing-fire-1297.firebaseio.com/hotels.json'}).
 			success(function(data, status, headers, config) {
 				
 				deferred.resolve(data);
@@ -24,6 +24,20 @@ factory('hotelDataProvider', ['$http', '$q', function dataProvider($http, $q){
 			});
 
 			return deferred.promise;
+		},
+		getDetail: function(id){
+			var deferred = $q.defer();
+
+			$http({method: 'GET', url:'https://blazing-fire-1297.firebaseio.com/hotels/' + id + '.json'}).
+			success(function(data, status, headers, config) {
+				
+				deferred.resolve(data);
+			}).
+			error(function(data, status, headers, config) {
+				deferred.reject();
+			});
+
+			return deferred.promise;	
 		}
 	}
 
